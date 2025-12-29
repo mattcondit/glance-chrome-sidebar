@@ -1,0 +1,95 @@
+.widget-container {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.widget-container.edit-mode {
+  border: 2px dashed var(--color-primary);
+  padding-top: 40px;
+  position: relative;
+}
+
+.widget-edit-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-sm);
+  background: var(--color-primary-muted);
+}
+
+.widget-drag-handle {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  cursor: grab;
+  font-size: 16px;
+  transition: background var(--transition-fast);
+}
+
+.widget-drag-handle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.widget-drag-handle:active {
+  cursor: grabbing;
+}
+
+.widget-delete-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-error);
+  font-size: 16px;
+  transition: background var(--transition-fast);
+}
+
+.widget-delete-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--transition-fast);
+}
+
+.widget-header:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.widget-icon {
+  font-size: 16px;
+}
+
+.widget-title {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.widget-collapse-icon {
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.widget-content {
+  padding: 0 var(--spacing-md) var(--spacing-md);
+}

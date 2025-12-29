@@ -1,0 +1,55 @@
+{
+  "name": "glance",
+  "displayName": "Glance",
+  "version": "0.1.0",
+  "description": "A customizable sidebar dashboard for GitHub PRs, tabs, and more",
+  "author": "Matt Condit",
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "package": "plasmo package"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "plasmo": "^0.90.5",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "zustand": "^5.0.9"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.32",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  },
+  "manifest": {
+    "host_permissions": [
+      "https://api.github.com/*",
+      "https://*.github.com/*"
+    ],
+    "permissions": [
+      "tabs",
+      "storage",
+      "sidePanel",
+      "tabGroups",
+      "bookmarks"
+    ],
+    "commands": {
+      "open-sidebar": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+G",
+          "mac": "Command+Shift+G"
+        },
+        "description": "Open Glance sidebar"
+      },
+      "tab-switcher": {
+        "suggested_key": {
+          "default": "Ctrl+D",
+          "mac": "Command+D"
+        },
+        "description": "Quick tab switcher"
+      }
+    }
+  }
+}

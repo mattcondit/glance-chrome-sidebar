@@ -1,0 +1,78 @@
+.integration-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.integration-header .settings-section-title {
+  margin-bottom: 0;
+}
+
+.integration-empty {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.integration-empty .text-muted {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  margin-top: var(--spacing-xs);
+}
+
+.integration-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.integration-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.integration-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.integration-item-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.integration-item-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.integration-item-username {
+  font-size: 12px;
+  color: var(--color-primary);
+}
+
+.integration-item-url {
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.integration-item-error {
+  font-size: 11px;
+  color: var(--color-error);
+}
+
+.integration-item-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
