@@ -6,6 +6,8 @@ This file provides guidance to Claude Code when working with code in this reposi
 
 **Glance** is a customizable Chrome extension sidebar dashboard built with [Plasmo](https://docs.plasmo.com/), React, TypeScript, and Zustand. It features a widget-based architecture where users can add, configure, and arrange different widgets.
 
+> This project is a work in progress, recreated from the [original prototype](https://github.com/mattcondit/sidebar-manager-chrome) that was built for personal use.
+
 ### Key Features (Planned)
 - **Widget System**: Modular, configurable tiles (GitHub PRs, bookmarks, tab groups, etc.)
 - **Multi-Account GitHub Integration**: Connect multiple GitHub accounts (personal, work, GHE)
@@ -58,6 +60,10 @@ src/
 │   ├── integrations/
 │   │   ├── types.ts           # Integration interfaces (GitHubAccount, etc.)
 │   │   └── storage.ts         # Chrome storage CRUD for integrations
+│   ├── settings/
+│   │   ├── types.ts           # App settings interfaces (theme, etc.)
+│   │   ├── storage.ts         # Chrome storage CRUD for settings
+│   │   └── themes.ts          # Theme definitions and CSS variable application
 │   └── widgets/
 │       ├── types.ts           # Widget interfaces (GitHubPRWidget, etc.)
 │       ├── storage.ts         # Chrome storage CRUD for widgets
@@ -91,10 +97,12 @@ src/
 - `widgetData`: Runtime data per widget (items, loading, error)
 - `editMode`: Layout editing toggle
 - `settingsOpen`, `settingsTab`: Settings modal state
+- `settings`: App-wide settings (theme, etc.)
 
 **Chrome Storage** (persisted):
 - `glance_integrations`: Integration configs with tokens
 - `glance_widgets`: Widget configs with settings
+- `glance_settings`: App settings (theme selection)
 
 ### Key Interfaces
 
@@ -150,6 +158,9 @@ interface GitHubPRWidgetSettings {
 - Tab Groups widget (functional - displays tabs by domain)
 - Bookmark widget (functional - clickable link tile)
 - Background service worker (keyboard shortcuts)
+- **Theme system**: 5 color themes (Midnight, Ocean, Forest, Sunset, Monochrome)
+- **Settings persistence**: App settings stored in Chrome storage
+- **Sidebar position UI**: Link to Chrome settings for left/right positioning
 
 ### In Progress 🔄
 - None currently
@@ -185,4 +196,23 @@ interface GitHubPRWidgetSettings {
 - CSS variables defined in `src/styles/global.css`
 - Component styles in co-located `.css` files
 - BEM-like naming: `.widget-container`, `.widget-header`, etc.
-- Color scheme: Dark theme with indigo accent (`--color-primary: #6366f1`)
+- Color scheme: Configurable via themes (default: Midnight with indigo accent)
+
+## Theme System
+
+Themes are defined in `src/lib/settings/themes.ts`. Each theme provides:
+- Background colors (primary, secondary, elevated)
+- Text colors (primary, secondary, muted)
+- Accent color (primary with hover and muted variants)
+- Status colors (success, warning, error)
+
+Available themes:
+- **Midnight** (default): Dark blue with indigo accent
+- **Ocean**: Slate blue with cyan accent
+- **Forest**: Dark green with green accent
+- **Sunset**: Dark brown/red with orange accent
+- **Monochrome**: Pure grayscale with white accent
+
+To add a new theme:
+1. Add theme ID to `ThemeId` type in `src/lib/settings/types.ts`
+2. Add theme definition to `THEMES` object in `src/lib/settings/themes.ts`
