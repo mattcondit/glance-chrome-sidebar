@@ -1,5 +1,7 @@
 # Glance
 
+> ⚠️ **Disclaimer**: This project is a work in progress, recreated from a highly personalized working version. Some features may be incomplete or missing.
+
 A customizable Chrome extension sidebar dashboard for GitHub PRs, tabs, and more.
 
 ## Features
