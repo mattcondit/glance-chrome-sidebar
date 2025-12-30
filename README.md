@@ -1,6 +1,6 @@
 # Glance
 
-> ⚠️ **Disclaimer**: This project is a work in progress, recreated from a highly personalized working version. Some features may be incomplete or missing.
+> ⚠️ **Disclaimer**: This project is a work in progress, recreated from a highly personalized working version. Some features may be incomplete or missing. See the [original prototype](https://github.com/mattcondit/sidebar-manager-chrome) that was built for personal use.
 
 A customizable Chrome extension sidebar dashboard for GitHub PRs, tabs, and more.
 
